@@ -33,3 +33,12 @@ dependencies {
     <version>X.X.X</version>
 </dependency>
 ```  
+
+#### The release add functions like:
+
+- Debugging logs,toast and snack bars
+- Storing data in shared preferences
+- Check and request dynamic permissions
+- Easy activity calling
+- Adding custom fonts
+- Calling implicit intents
