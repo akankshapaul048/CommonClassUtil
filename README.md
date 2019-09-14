@@ -34,7 +34,7 @@ dependencies {
 </dependency>
 ```  
 
-#### The release add functions like:
+#### The release add functions:
 
 - Debugging logs,toast and snack bars
 - Storing data in shared preferences
