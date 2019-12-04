@@ -9,24 +9,33 @@ import android.util.Log
 class LogUtil {
     companion object {
 
+        private var BOOL_LOG = true
+        fun getInstance(log:Boolean){
+            BOOL_LOG = log
+        }
         fun errorLog(TAG: String, message: String) {
-            Log.e(TAG, message)
+            if (BOOL_LOG)
+                Log.e(TAG, message)
         }
 
         fun debugLog(TAG: String, message: String) {
-            Log.d(TAG, message)
+            if (BOOL_LOG)
+                Log.d(TAG, message)
         }
 
         fun warnLog(TAG: String, message: String) {
-            Log.w(TAG, message)
+            if (BOOL_LOG)
+                Log.w(TAG, message)
         }
 
         fun verboseLog(TAG: String, message: String) {
-            Log.v(TAG, message)
+            if (BOOL_LOG)
+                Log.v(TAG, message)
         }
 
         fun infoLog(TAG: String, message: String) {
-            Log.i(TAG, message)
+            if (BOOL_LOG)
+                Log.i(TAG, message)
         }
     }
 }
