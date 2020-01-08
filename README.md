@@ -4,6 +4,7 @@
 
 [![](https://jitpack.io/v/akankshapaul048/CommonClassUtil.svg)](https://jitpack.io/#akankshapaul048/CommonClassUtil)
 
+
 ### Gradle
 ``` Groovy
 allprojects {
