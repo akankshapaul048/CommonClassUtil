@@ -24,6 +24,7 @@ class CheckPermission {
         const val REQUEST_CODE_CALL_PERMISSION = 400
         const val REQUEST_CODE_STORAGE_PERMISSION = 350
         const val REQUEST_CODE_LOCATION_PERMISSION = 450
+        const val REQUEST_CODE_LOCATION_PERMISSION_BACKGROUND = 450
         const val REQUEST_CODE_CAMERA_PERMISSION = 360
         const val REQUEST_CODE_CAMERA_STORAGE_PERMISSION = 460
         const val REQUEST_CODE_READ_SMS_PERMISSIONS = 500
@@ -240,6 +241,23 @@ class CheckPermission {
          * Used to check Location Permission.
          */
         fun checkLocationPermission(mContext: Context): Boolean {
+            val result = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
+            val result1 = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION)
+            /*if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.Q) {
+                val result2 = ContextCompat.checkSelfPermission(
+                    mContext,
+                    Manifest.permission.ACCESS_BACKGROUND_LOCATION
+                )
+                return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED && result2 == PackageManager.PERMISSION_GRANTED
+            } else{
+                return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED
+            }*/
+            return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED
+        }
+/**
+         * Used to check Location Permission.
+         */
+        fun checkLocationPermissionBackground(mContext: Context): Boolean {
             val result = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_COARSE_LOCATION)
             val result1 = ContextCompat.checkSelfPermission(mContext, Manifest.permission.ACCESS_FINE_LOCATION)
             if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.Q) {
